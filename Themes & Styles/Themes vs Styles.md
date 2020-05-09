@@ -8,7 +8,7 @@ My goal with the *Mastering Android Themes and Styles* series is to demistify th
 
 First, let's take a look at styles. What they are, how we can declare them, where and when we should use them.
 
-I belive it's best to learn by example, so let's start with one, which will help us answer the questions from above.
+I belive it's best to learn by example, so let's start with one. It will help us answer the questions from above.
 
 ![Example button](example_button.png)
 
@@ -26,7 +26,7 @@ We have a simple button which is defined in the xml like this:
     android:text="Example" />
 ~~~
 
-Now, let's say you want multiple buttons in your app to have the same margins, textAppearance and lower-case text. You can repeat this declaration every time (please don't), or you can extract those repeating attributes into a style and reuse that style on every button that needs it. 
+Now, let's say you want multiple buttons in your app to have the same margins, textAppearance and lower-case text. You can repeat this declaration every time (please don't), or you can extract those repeating attributes into a style and reuse that style on every button that needs it. You can declare a style like this: 
 
 ~~~xml
 <style name="ExampleButtonStyle" parent="Widget.MaterialComponents.Button">
@@ -35,6 +35,21 @@ Now, let's say you want multiple buttons in your app to have the same margins, t
     <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Button</item>
     <item name="android:layout_gravity">bottom|center</item>
   </style>
+~~~
+
+Every style declaration begins with a `<style>` tag. Inside of it you specify a **name** for the style and its **parent**. When you specify a parent for a style, it inherits **all** of the attributes from the parent. Inside of the style tag you can then define **view** attributes by using `<item>` tags. In each `<item>` you need to specify a name for a **view** attribute and its value.
+
+I put **view** attributes in bold here because it's important to note that you should only use attributes applicable to views when defining styles. We'll see later what is the difference between theme attributes and view attributes, and why it's important to know when to use each one of them. 
+
+Now you can simply apply this newly created style to every `Button` that needs to have these attributes. 
+
+~~~xml
+<Button
+    android:id="@+id/exampleButton"
+    style="@style/ExampleButtonStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Example" />
 ~~~
 
 
