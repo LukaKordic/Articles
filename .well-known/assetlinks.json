@@ -1,9 +1,0 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "de.alnatura.android.staging",
-    "sha256_cert_fingerprints":
-    ["E9:0D:57:01:DD:52:A5:61:21:CE:9D:FB:5E:5E:5A:74:2E:0A:4E:53:FF:AF:06:51:4D:E8:D5:21:A0:6B:A3:BF"]
-  }
-}]
